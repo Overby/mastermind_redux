@@ -1,4 +1,4 @@
-require_relative './gameplay'  #was './game'
+require_relative './gameplay'
 class Mastermind
   def initialize
     Gameplay.new($stdin, $stdout).play
@@ -6,3 +6,4 @@ class Mastermind
 end
 
 Mastermind.new
+#CodeGenerator.new.generate_colors

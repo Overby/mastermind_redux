@@ -18,7 +18,7 @@ require './gameplay'  #was './game'
       puts "That is too long. Try again."
     elsif input == "rrgb"
       puts "Correct! Thanks for playing!"
-      #puts Time.new
+      puts Time.new
       return
     else
       puts "You've taken one guess."
@@ -35,11 +35,12 @@ require './gameplay'  #was './game'
       elsif input.chars[3] == answer.chars[3]
         position_count += 1
       end
-      correct_count = 0
-      input.chars.each do |letter|
-        index = answer.chars.find_index(letter)
-        if index
-          answer.chars.delete_at(index)
-          correct_count += 1
-        end
+      # correct_count = 0
+      # input.chars.each do |letter|
+      #   index = answer.chars.find_index(letter)
+      #   if index
+      #     answer.chars.delete_at(index)
+      #     correct_count += 1
+      #   end
       end
+end

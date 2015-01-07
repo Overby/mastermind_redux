@@ -3,7 +3,7 @@ class Messages
     {
       :welcome => "Welcome to MASTERMIND\n",
       :intro => "Would you like to (p)lay, read the (i)nstructions, or (q)uit?",
-      :rules => "See Mastermind website for rules.",
+      :rules => "See Mastermind website for rules; you could also make up your own.",
       :play => "I have generated a beginner sequence with four elements made up
       \nof: (r)ed,(g)reen, (b)lue, and (y)ellow. Choose four characters. Use\n
        (q)uit at any time to end the game. What's your guess?",

@@ -1,14 +1,13 @@
 require_relative './messages'
 
-class Gameplay   #was class Game
-  attr_reader :stdin, :stdout
+class Gameplay 
+  attr_reader :stdin, :stdout, :end_time, :start_time
 
   def initialize(input_stream, output_stream)
     @stdin       = input_stream
     @stdout      = output_stream
     @turns       = 0
-    #@ending_time = ending_time
-    @start_time  = Time.new
+    @start_time  = Time.now
   end
 
   def play
@@ -43,15 +42,14 @@ class Gameplay   #was class Game
         stdout.puts Messages.call[:too_long]
       elsif input.scan(/[^rgby]/).count > 0
         stdout.puts Messages.call[:valid_characters]
-      elsif input == "rrgb"
+      elsif input == "bbgb"
         puts "Correct! Your ending time is #{ending_time}."
+        @end_time = Time.now
         return
       else
-        puts "You've taken #{turn_counter} guesses."
-        #How many letters are correct?
-        #How many letters are in the right position?
+        puts "You've taken #{turn_counter} guess(es)."
         position_count = 0
-        answer = 'rrgb'
+        answer = 'bbgb'
 
         if input.chars[0] == answer.chars[0]
           position_count += 1
@@ -71,35 +69,21 @@ class Gameplay   #was class Game
           end
 
         end
-          puts "'#{input}' has #{correct_count} of the correct elements with
-          #{position_count} in the correct positions."
+         puts "'#{input}' has #{correct_count} of the correct elements with
+         #{position_count} in the correct positions."
       end
     end
   end
 
   def ending_time
     Time.new
-  #   Time.now.strftime("%H:%M:%S")
   end
 
   def turn_counter
     @turns += 1
   end
+
+  def elapsed_time
+    end_time.round(2) - start_time.round(2)
+  end
 end
-  # def time_seconds
-  #   Time.new % 60
-  # end
-
-
-   #def end_time_integer
-  #   (@ending_time.gsub(/:/, "").to_i
-   #end
-  #
-  # def start_time_integer
-  #      @start_time.gsub(/:/, "").to_i))
-  # end
-
-  # def start_time
-  #   Time.now.strftime("%H:%M:%S")
-   # end
-  #
