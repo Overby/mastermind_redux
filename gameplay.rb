@@ -83,9 +83,9 @@ class Gameplay
     @turns += 1
   end
 
-  # def elapsed_time
-  #   end_time - start_time
-  #   #end_time.round.to_f(2) - start_time.round.to_f(2)
-  #
-  # end
+  def elapsed_time
+    end_time - start_time
+    #end_time.round.to_f(2) - start_time.round.to_f(2)
+  
+  end
 end
