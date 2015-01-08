@@ -86,6 +86,6 @@ class Gameplay
   def elapsed_time
     end_time - start_time
     #end_time.round.to_f(2) - start_time.round.to_f(2)
-  
+
   end
 end
